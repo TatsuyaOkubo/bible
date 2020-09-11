@@ -11,6 +11,12 @@
   <a href="#">新規ノート</a>
 </div>
 
-<div class="account">
-  <a href="#">アカウント</a>
+<div class="account-menu" id="lists">
+<div class="account" >
+  <a>アカウント</a>
+</div>
+    <ul class="account-lists hidden" id="pull-down">
+      <li><%= link_to '新規登録', new_user_registration_path, class: "pull-down-list" %></li>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "pull-down-list" %></li>
+    </ul>
 </div>
