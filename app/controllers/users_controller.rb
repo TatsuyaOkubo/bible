@@ -1,6 +1,21 @@
 class UsersController < ApplicationController
-def destroy
-  redirect_to root_path
-end
-  
+
+  def edit
+    @user = User.find(current_user.id)
+  end
+
+  def update
+    if current_user.update(user_params)
+      bypass_sign_in(current_user)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
+  end
 end
