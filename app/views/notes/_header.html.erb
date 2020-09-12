@@ -13,7 +13,11 @@
 
 <div class="account-menu" id="lists">
 <div class="account" >
+<% if user_signed_in? %>
+  <a><%= current_user.name %></a>
+<% else %>
   <a>アカウント</a>
+<% end %>
 </div>
     <ul class="account-lists hidden" id="pull-down">
       <% if user_signed_in? %>
