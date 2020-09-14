@@ -27,40 +27,14 @@ color: black;
 text-decoration: none;
 }
 
-
-
 .create-note a{
   font-size: 16px;
   color: black;
   text-decoration: none;
 }
 
-.account-menu{
-  display: flex;
-  flex-direction: column;
-}
-
 .account a{
   font-size: 16px;
   color: black;
-  padding: 20px;
-  margin: 10px;
   text-decoration: none;
-}
-
-.account-lists{
-  position: absolute;
-  top: 35px;
-  list-style:none;
-  text-decoration: none;
-  border: 1px solid gray;
-  background-color: #eee8aa;
-}
-
-.pull-down-list{
-  padding: 10px;
-}
-
-.hidden{
-  display: none;
 }

@@ -11,21 +11,8 @@
   <a href="#">新規ノート</a>
 </div>
 
-<div class="account-menu" id="lists">
-<div class="account" >
-<% if user_signed_in? %>
-  <a><%= current_user.name %></a>
-<% else %>
-  <a>アカウント</a>
-<% end %>
-</div>
-    <ul class="account-lists hidden" id="pull-down">
-      <% if user_signed_in? %>
-      <li><%= link_to '編集', edit_user_path(current_user), class: "pull-down-list" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "pull-down-list" %></li>
-      <% else %>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "pull-down-list" %></li>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "pull-down-list" %></li>
-      <% end %>
-    </ul>
+<div class="account" id="account">
+  <%= link_to edit_user_path(current_user) do %>
+  <%= current_user.name %>
+  <% end %>
 </div>

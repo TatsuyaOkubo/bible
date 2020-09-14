@@ -1,16 +1,12 @@
 window.addEventListener('load', function(){
 
-  const pullDownButton = document.getElementById("lists")
-  const pullDownParents = document.getElementById("pull-down")
+  const userButton = document.getElementById("account")
 
-
-  pullDownButton.addEventListener('mouseover', function(){
+  userButton.addEventListener('mouseover', function(){
     this.setAttribute("style", "background-color:#FFBEDA;")
-    pullDownParents.setAttribute("style", "display:block;")
   })
 
-  pullDownButton.addEventListener('mouseout', function(){
+  userButton.addEventListener('mouseout', function(){
     this.removeAttribute("style", "background-color:#FFBEDA;")
-    pullDownParents.removeAttribute("style", "display:block;")
   })
 })
