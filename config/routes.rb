@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get 'notes/index'
+  devise_for :users
+  resources :notes
   root to: "notes#index"
+  resources :users, only: [:show, :edit, :update]
 end
