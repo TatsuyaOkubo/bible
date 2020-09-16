@@ -1,0 +1,12 @@
+<div class="note-main">
+  <%= form_with model: @note, url: notes_path, method: :post, local: true do |f| %>
+
+  <div class="name-main">
+    <%= f.text_area :note_name, class:"note_name", id:"note_name", placeholder:"ノート名（20文字まで)", maxlength:"20" %>
+  </div>
+
+  <div class="text-main">
+      <%= f.text_area :text, class:"text", id:"text", placeholder:"ノート入力欄" %>
+  </div>
+  <% end %>
+</div>
