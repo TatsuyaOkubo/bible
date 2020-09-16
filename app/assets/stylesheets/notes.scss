@@ -38,3 +38,76 @@ text-decoration: none;
   color: black;
   text-decoration: none;
 }
+
+.note-content {
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 500px;
+}
+
+.note-main {
+  background-color: #FFF;
+  height: 100vh;
+  width: 80vw;
+  min-width: 450px;
+  padding: 2vh 1vw;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 100vw;
+}
+
+.note {
+  height: 100vh;
+}
+
+.note-name-parent {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  height: 10px;
+}
+
+.note-name-child {
+  height: 10px;
+  width: 50%;
+}
+
+.note-name {
+  height: 40px;
+  width: 100%;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 24px;
+  resize: none;
+}
+
+.note-text-parent{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.note-text-child {
+  height: 100vh;
+  width: 100%;
+}
+
+.note-text {
+  height: 100vh;
+  width: 100%;
+  margin: 1vh 0 0 0;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}

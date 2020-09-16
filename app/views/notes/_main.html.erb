@@ -1,12 +1,25 @@
-<div class="note-main">
-  <%= form_with model: @note, url: notes_path, method: :post, local: true do |f| %>
+<div class="header">
+  <%= render "header" %>
+</div>
 
-  <div class="name-main">
-    <%= f.text_area :note_name, class:"note_name", id:"note_name", placeholder:"ノート名（20文字まで)", maxlength:"20" %>
-  </div>
+<div class="note-content">
+  <div class="note-main">
 
-  <div class="text-main">
-      <%= f.text_area :text, class:"text", id:"text", placeholder:"ノート入力欄" %>
+    <%= form_with model: @note, url: notes_path, method: :post, class:"form", local: true do |f| %>
+
+    <div class="note">
+      <div class="note-name-parent">
+        <div class="note-name-child">
+        <%= f.text_area :note_name, class:"note-name", id:"note-name", placeholder:"ノート名", maxlength:"40" %>
+        </div>
+      </div>
+      <div class="note-text-parent">
+        <div class="note-text-child">
+        <%= f.text_area :text, class:"note-text", id:"note-info", placeholder:"ノート記載欄" %>
+        </div>
+      </div>
+    </div>
+
   </div>
   <% end %>
 </div>
