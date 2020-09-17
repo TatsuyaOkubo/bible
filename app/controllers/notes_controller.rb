@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:edit, :update]
+  before_action :move_to_session
 
   def index
     @notes = Note.order('created_at DESC')
@@ -38,4 +39,8 @@ class NotesController < ApplicationController
   def set_note
     @note = Note.find(params[:id])
   end
+
+  def move_to_session
+    redirect_to new_user_session_path unless user_signed_in?
+    end
 end
