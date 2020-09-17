@@ -10,7 +10,12 @@
     <div class="note">
       <div class="note-name-parent">
         <div class="note-name-child">
-        <%= f.text_area :note_name, class:"note-name", id:"note-name", placeholder:"ノート名", maxlength:"40" %>
+          <div class="note-name-son">
+          <%= f.text_area :note_name, class:"note-name", id:"note-name", placeholder:"ノート名", maxlength:"40" %>
+          </div>
+          <div class="save-btn-contents">
+          <%= f.submit "保存" ,class:"save-btn" %>
+          </div>
         </div>
       </div>
       <div class="note-text-parent">
