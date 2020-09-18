@@ -2,7 +2,8 @@
   <%= render "header" %>
 </div>
 
-  <% @notes.each do |note|  %>
+<% @notes.each do |note|  %>
+  <% unless note.trash %>
   <div class='catalog'>
     <%= link_to note.note_name, edit_note_path(note.id), method: :get, class:"catalog-name" %>
     <a href="#">
@@ -10,3 +11,4 @@
     </a>
   </div>
   <% end %>
+<% end %>

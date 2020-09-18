@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:edit, :update]
+  before_action :set_note, only: [:edit, :update, :throw]
   before_action :move_to_session
 
   def index
@@ -30,6 +30,15 @@ class NotesController < ApplicationController
     end
   end
   
+  def throw
+    if @note.trash
+      note.update(trash: false)
+    else
+      note.update(trash: true)
+    end
+    note = Note.find(params[:id])
+    render json: { post: note }
+
   private
 
   def note_params
