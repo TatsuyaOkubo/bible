@@ -6,8 +6,11 @@
   <% if note.trash %>
   <div class='catalog' >
     <%= link_to note.note_name, edit_note_path(note.id), method: :get, class:"catalog-name", id:"catalog-name" %>
-    <div class="trash-btn-icon" id="trash-btn-icon" data-id=<%= note.id %> data-check=<%= note.trash %>>
-    <%= link_to '削除', note_path(note.id), method: :delete %>
+    <div class="revival" id="revival" data-id=<%= note.id %> data-check=<%= note.trash %>>
+    <%= button_to '復活', note_path(note.id), method: :delete %>
+    </div>
+    <div class="delete-btn" id="delete-btn" data-id=<%= note.id %> data-check=<%= note.trash %>>
+    <%= button_to '削除', note_path(note.id), method: :delete %>
     </div>
   </div>
   <% end %>
