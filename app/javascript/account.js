@@ -1,7 +1,6 @@
 window.addEventListener('load', function(){
 
   const userButton = document.getElementById("account")
-
   userButton.addEventListener('mouseover', function(){
     this.setAttribute("style", "background-color:#FFBEDA;")
   })

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_094502) do
 
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text"
-    t.boolean "trash"
+    t.boolean "trash", default: false, null: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

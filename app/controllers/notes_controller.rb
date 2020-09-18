@@ -32,12 +32,15 @@ class NotesController < ApplicationController
   
   def throw
     if @note.trash
-      note.update(trash: false)
+      @note.update(trash: false)
     else
-      note.update(trash: true)
+      @note.update(trash: true)
     end
-    note = Note.find(params[:id])
-    render json: { post: note }
+
+    box = Note.find(params[:id])
+    render json: { post: box }
+    ActionCable.server.broadcast 'display_channel', content: @note
+  end
 
   private
 
