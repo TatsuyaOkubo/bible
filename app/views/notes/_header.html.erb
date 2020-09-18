@@ -2,6 +2,10 @@
   <a><%= link_to '一覧', root_path %></a>
 </div>
 
+<div class="open-box">
+<a><%= link_to 'ごみ箱', notes_dust_path %></a>
+</div>
+
 <%= form_with( class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "キーワードを検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>

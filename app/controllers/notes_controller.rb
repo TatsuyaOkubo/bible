@@ -1,9 +1,9 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:edit, :update]
+  before_action :all_note, only: [:index, :dust]
+  before_action :set_note, only: [:edit, :update, :throw, :destroy, :revival]
   before_action :move_to_session
 
   def index
-    @notes = Note.order('created_at DESC')
   end
 
   def new
@@ -30,10 +30,48 @@ class NotesController < ApplicationController
     end
   end
   
+  def throw
+    if @note.trash
+      @note.update(trash: false)
+    else
+      @note.update(trash: true)
+    end
+    box = Note.find(params[:id])
+    render json: { post: box }
+    ActionCable.server.broadcast 'display_channel', content: @note
+  end
+
+  def dust
+  end
+
+  def destroy
+    erase = Note.find(params[:id])
+    if @note.destroy
+      ActionCable.server.broadcast 'trash_channel', content: @note
+    else
+      render :dust
+    end
+  end
+
+  def revival
+    if @note.trash
+      @note.update(trash: false)
+    else
+      @note.update(trash: true)
+    end
+    revival = Note.find(params[:id])
+    render json: { post: revival }
+    ActionCable.server.broadcast 'trash_channel', content: @note
+  end
+
   private
 
   def note_params
     params.require(:note).permit(:note_name, :text).merge(user_id: current_user.id)
+  end
+
+  def all_note
+    @notes = Note.order('created_at DESC')
   end
 
   def set_note

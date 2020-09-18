@@ -2,9 +2,13 @@
   <%= render "header" %>
 </div>
 
-  <% @notes.each do |note|  %>
-  <div class='catalog'>
-    <%= link_to note.note_name, edit_note_path(note.id), method: :get, class:"catalog-name" %>
-    <%= image_tag 'trash.png' , size: '40x40' ,class: "trash-btn-icon" %>
+<% @notes.each do |note|  %>
+  <% unless note.trash %>
+  <div class='catalog' >
+    <%= link_to note.note_name, edit_note_path(note.id), method: :get, class:"catalog-name", id:"catalog-name" %>
+    <div class="trash-btn-icon" id="trash-btn-icon" data-id=<%= note.id %> data-check=<%= note.trash %>>
+    <%= image_tag 'trash.png' , size: '40x40' %>
+    </div>
   </div>
   <% end %>
+<% end %>
