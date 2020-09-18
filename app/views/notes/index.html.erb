@@ -5,6 +5,8 @@
   <% @notes.each do |note|  %>
   <div class='catalog'>
     <%= link_to note.note_name, edit_note_path(note.id), method: :get, class:"catalog-name" %>
+    <a href="#">
     <%= image_tag 'trash.png' , size: '40x40' ,class: "trash-btn-icon" %>
+    </a>
   </div>
   <% end %>
