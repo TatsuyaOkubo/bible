@@ -10,7 +10,7 @@ consumer.subscriptions.create("DisplayChannel", {
   },
 
   received(data) {
-    const html = `<p>${data.content.note_name}</p>`;
+    const html = `${data.content}`;
     const catalogs = document.getElementById('catalog-name');
     const boxs = document.getElementById('trash-btn-icon');
     catalogs.remove(html);

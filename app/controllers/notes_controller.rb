@@ -1,9 +1,9 @@
 class NotesController < ApplicationController
+  before_action :all_note, only: [:index, :dust]
   before_action :set_note, only: [:edit, :update, :throw]
   before_action :move_to_session
 
   def index
-    @notes = Note.order('created_at DESC')
   end
 
   def new
@@ -42,10 +42,17 @@ class NotesController < ApplicationController
     ActionCable.server.broadcast 'display_channel', content: @note
   end
 
+  def dust
+  end
+
   private
 
   def note_params
     params.require(:note).permit(:note_name, :text).merge(user_id: current_user.id)
+  end
+
+  def all_note
+    @notes = Note.order('created_at DESC')
   end
 
   def set_note

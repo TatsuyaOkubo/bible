@@ -1,0 +1,14 @@
+<div class="header">
+  <%= render "header" %>
+</div>
+
+<% @notes.each do |note|  %>
+  <% if note.trash %>
+  <div class='catalog' >
+    <%= link_to note.note_name, edit_note_path(note.id), method: :get, class:"catalog-name", id:"catalog-name" %>
+    <div class="trash-btn-icon" id="trash-btn-icon" data-id=<%= note.id %> data-check=<%= note.trash %>>
+    <%= link_to '削除', note_path(note.id), method: :delete %>
+    </div>
+  </div>
+  <% end %>
+<% end %>
