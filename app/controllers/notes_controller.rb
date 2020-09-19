@@ -64,6 +64,10 @@ class NotesController < ApplicationController
     ActionCable.server.broadcast 'trash_channel', content: @note
   end
 
+  def search
+    @notes = Note.search(params[:keyword])
+  end
+
   private
 
   def note_params

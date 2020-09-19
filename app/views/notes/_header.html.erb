@@ -6,7 +6,7 @@
 <a><%= link_to 'ごみ箱', notes_dust_path %></a>
 </div>
 
-<%= form_with( class: "search-form") do |form| %>
+<%= form_with(url: search_notes_path, local: true, method: :get, class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "キーワードを検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
