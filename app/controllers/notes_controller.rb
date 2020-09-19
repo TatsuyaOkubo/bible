@@ -65,7 +65,7 @@ class NotesController < ApplicationController
   end
 
   def search
-    @notes = Note.search(params[:keyword])
+    @notes = Note.search(params[:keyword]).order('created_at DESC')
   end
 
   private
