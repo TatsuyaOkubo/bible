@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :all_note, only: [:index, :dust]
-  before_action :set_note, only: [:edit, :update, :throw, :destroy, :revival]
+  before_action :set_note, only: [:edit, :update, :show, :throw, :destroy, :revival]
   before_action :move_to_session
 
   def index
@@ -29,6 +29,18 @@ class NotesController < ApplicationController
       render :edit
     end
   end
+
+  def show
+  end
+
+  def destroy
+    erase = Note.find(params[:id])
+    if @note.destroy
+      ActionCable.server.broadcast 'trash_channel', content: @note
+    else
+      render :dust
+    end
+  end
   
   def throw
     if @note.trash
@@ -42,15 +54,6 @@ class NotesController < ApplicationController
   end
 
   def dust
-  end
-
-  def destroy
-    erase = Note.find(params[:id])
-    if @note.destroy
-      ActionCable.server.broadcast 'trash_channel', content: @note
-    else
-      render :dust
-    end
   end
 
   def revival

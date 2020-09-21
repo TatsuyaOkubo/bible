@@ -5,25 +5,22 @@
 <div class="note-content">
   <div class="note-main">
 
-    <%= form_with model: @note, url: note_path, method: :patch, class:"form", local: true do |f| %>
-
     <div class="note">
       <div class="note-name-parent">
         <div class="note-name-child">
           <div class="note-name-son">
-          <%= f.text_area :note_name, class:"note-name", id:"note-name", placeholder:"ノート名", maxlength:"40" %>
+          <%= @note.note_name %>
           </div>
           <div class="save-btn-contents">
-          <%= f.submit "保存" ,class:"save-btn" %>
+          <%= link_to "編集", edit_note_path(@note.id), method: :get, class:"save-btn" %>
           </div>
         </div>
       </div>
       <div class="note-text-parent">
         <div class="note-text-child">
-        <%= f.text_area Rinku.auto_link(h(:text)), class:"note-text", id:"note-info", placeholder:"ノート記載欄" %>
+        <%= raw Rinku.auto_link(safe_join(@note.text.split("\n"), tag(:br)), :all, 'target="_blank"')%>
         </div>
       </div>
     </div>
   </div>
-  <% end %>
 </div>
