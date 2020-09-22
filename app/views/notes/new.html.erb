@@ -20,7 +20,9 @@
       </div>
       <div class="note-text-parent">
         <div class="note-text-child">
-        <%= f.text_area :text, class:"note-text", id:"note-info", placeholder:"ノート記載欄" %>
+            <%= f.label :text %>
+    <%= f.rich_text_area :text %>
+  </div>
         </div>
       </div>
     </div>
