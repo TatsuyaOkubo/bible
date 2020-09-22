@@ -41,7 +41,6 @@ Things you may want to cover:
 
 | Column      | Type    | Options                        |
 | ----------- | ------- | ------------------------------ |
-| description | text    |                                |
 | trash       | boolean |                                |
 | user_id     | integer | null: false, foreign_key: true |
 
