@@ -19,9 +19,10 @@
         </div>
       </div>
       <div class="note-text-parent">
-        <div class="note-text-child">
-        <%= f.text_area Rinku.auto_link(h(:text)), class:"note-text", id:"note-info", placeholder:"ノート記載欄" %>
-        </div>
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.rich_text_area :text %>
+  </div>
       </div>
     </div>
   </div>
