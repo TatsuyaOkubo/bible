@@ -24,7 +24,7 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to root_path
+      render :show
     else
       render :edit
     end
