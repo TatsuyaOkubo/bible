@@ -1,5 +1,30 @@
 <div class="header">
-  <%= render "header" %>
+  <div class="home">
+  <a><%= link_to '一覧', root_path %></a>
+  </div>
+
+  <div class="open-box">
+  <a><%= link_to 'ごみ箱', dust_notes_path %></a>
+  </div>
+
+  <%= form_with(url: search_notes_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "キーワードを検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+
+  <div class="create-note">
+    <a><%= link_to '新規作成', new_note_path %></a>
+  </div>
+
+  <div class="edit-note">
+    <a><%= link_to "編集", edit_note_path(@note.id), method: :get %></a>
+  </div>
+
+  <div class="account" id="account">
+    <%= link_to edit_user_path(current_user) do %>
+    <%= current_user.name %>
+    <% end %>
+  </div>
 </div>
 
 <div class="note-content">
@@ -10,9 +35,6 @@
         <div class="note-name-child">
           <div class="note-name-son">
           <%= @note.note_name %>
-          </div>
-          <div class="save-btn-contents">
-          <%= link_to "編集", edit_note_path(@note.id), method: :get, class:"save-btn" %>
           </div>
         </div>
       </div>
