@@ -9,11 +9,7 @@ consumer.subscriptions.create("DisplayChannel", {
     // Called when the subscription has been terminated by the server
   },
 
-  received(data) {
-    const html = `${data.content}`;
-    const catalogs = document.getElementById('catalog-name');
-    const boxs = document.getElementById('trash-btn-icon');
-    catalogs.remove(html);
-    boxs.remove(html);
+  received() {
+    document.location.reload()
   }
 });
