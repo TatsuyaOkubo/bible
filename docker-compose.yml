@@ -20,3 +20,13 @@ services:
     depends_on:
       - db
     env_file: db.env
+
+  nginx:
+    build: containers/nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./public:/app/public
+      - ./tmp:/app/tmp
+    depends_on:
+      - web
