@@ -34,3 +34,8 @@ services:
       - 80:80
     depends_on:
       - app
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:
