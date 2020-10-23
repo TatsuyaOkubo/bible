@@ -1,46 +1,54 @@
 # Bible
 
-Bible guides you the way to go.
+Bibleはノート管理アプリです。
+<br>
+下記の機能により、自分でノートを作成し、管理・運用することができます。
+* テキスト記載
+* 画像挿入
+* リンク作成
+* 必要なノート検索
+* 不要なノートのゴミ捨て
 
 <br>
 
-# Overviw
-## You can create and manage your notes.
-* Text creation
-* Image creation
-* Link creation
-* You can search for the note you need.
+# 🌐 アプリURL
+### **http://54.150.18.21:3000**
 
 <br>
 
-# Suite URL
+# テストアカウント
+メールアドレス：taro@sample.com
+
+パスワード：tarotaro1
 
 <br>
 
-# Test account
+# 制作背景
+オンライン学習に最適なノート及びその管理ツールを作成することが目的です。
+機能の実装意図は下記の要件定義の通りとなっております。
+
+<p align="center">
+  <img src="http://54.150.18.21:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ca47345c30f517a97760436a7efa0de165af56d8/be75613ea63c7756719cbfadcb11577b.png" width=70%>  
+</p>
 
 <br>
 
-# How to run the test suite
-1. Register as a user.
-2. Create a new note from the "新規作成" button.
-3. Edit your notes as you like.
+# 今後実装予定の内容
+* Googleアカウントでのログイン
+* ドラッグアンドドロップによるノートの並び順変更
+* パスワード再発行機能
 
 <br>
 
-# Purpose of bible
-* Digitization of notebooks suitable for online learning.
-* Collective management of memos, presentation materials, videos, etc.
+# 使用技術(開発環境)
+* フレームワーク: Ruby on Rails
+* フロントエンド: HTML、CSS、JavaScript
+* インフラ: Docker、AWS
+* バージョン管理: Git、GitHub
 
 <br>
 
-# Future plan
-* Embedding videos and slides
-* Password reset function using email account
-
-<br>
-
-# Database creation
+# DB設計
 
 ## users table
 
@@ -68,16 +76,3 @@ Bible guides you the way to go.
 - belongs_to :user
 
 <br>
-
-# How to work locally
-
-* Ruby version 2.6.5
-* Rail version 6.0.0
-* MySQL version 0.4.4
-* Docker
-
-```command
-% git clone https://github.com/TatsuyaOkubo/bible.git
-% cd bible
-% docker-compose up
-```
