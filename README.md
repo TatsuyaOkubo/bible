@@ -28,15 +28,15 @@ Bibleはノート管理アプリです。
 機能の実装意図は下記の要件定義の通りとなっております。
 
 <p align="center">
-  <img src="http://54.150.18.21:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ca47345c30f517a97760436a7efa0de165af56d8/be75613ea63c7756719cbfadcb11577b.png" width=100%>  
+  <img src="http://54.150.18.21:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e992f54a2800ef84ee63c6920c73f37f514cdb0c/d6da12efba6ecf41ad8f96cfc7e47d6d.png" width=100%>  
 </p>
 
 <br>
 
 # 😏 今後実装予定の内容
-* Googleアカウントでのログイン
 * ドラッグアンドドロップによるノートの並び順変更
 * パスワード再発行機能
+* 動画挿入機能
 
 <br>
 
