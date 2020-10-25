@@ -1,5 +1,8 @@
-.header{
-  background-color: #eee8aa;
+$cwhite: #EEEEEE;
+$cBlack: #333333;
+
+.header {
+  background-color: $cBlack;
   width: 100%;
   height: 50px;
   display: flex;
@@ -21,42 +24,47 @@
   text-decoration: none;
 }
 
-.home a{
-font-size: 16px;
-color: black;
-text-decoration: none;
+.search-btn {
+  background-color: white;
+  cursor: pointer;
 }
 
-.open-box a{
+.home a {
   font-size: 16px;
-  color: black;
-  text-decoration: none;
-  }
-
-.create-note a{
-  font-size: 16px;
-  color: black;
+  color: $cwhite;
   text-decoration: none;
 }
 
-.edit-note a{
+.open-box a {
   font-size: 16px;
-  color: black;
+  color: $cwhite;
   text-decoration: none;
 }
 
-.account a{
+.create-note a {
   font-size: 16px;
-  color: black;
+  color: $cwhite;
   text-decoration: none;
 }
 
-.catalog{
+.edit-note a {
+  font-size: 16px;
+  color: yellow;
+  text-decoration: none;
+}
+
+.account a {
+  font-size: 16px;
+  color: $cwhite;
+  text-decoration: none;
+}
+
+.catalog {
   display: flex;
   justify-content: center;
 }
 
-.catalog-name{
+.catalog-name {
   height: 40px;
   width: 80%;
   padding: 4px;
@@ -68,20 +76,32 @@ text-decoration: none;
   text-decoration: none;
   color: black;
   text-align: center;
+  box-shadow: none;
+
+    &:hover {
+      transform: translate(-2.5px, -2.5px);
+      box-shadow: 5px 5px 0 0 gray;
+      transition: 0.3s;
+    }
 }
 
-.revival{
+.revival {
   margin: 20px;
   padding-top: 10px;
 }
 
-.delete-btn{
+.delete-btn {
   margin-top: 20px;
   padding-top: 10px;
 }
 
-.trash-btn-icon{
+.trash-btn-icon {
   margin-top: 20px;
+  cursor: pointer;
+  &:hover {
+    transform: translate(0px, -2.5px);
+    transition: 0.3s;
+  }
 }
 
 .note-content {
@@ -94,7 +114,7 @@ text-decoration: none;
 }
 
 .note-main {
-  background-color: #FFF;
+  background-color: #fff;
   height: 100vh;
   width: 80vw;
   min-width: 450px;
@@ -124,12 +144,15 @@ text-decoration: none;
   display: flex;
 }
 
-.save-btn-contents{
+.save-btn-contents {
   width: 5%;
 }
 
-.save-btn{
+.save-btn {
+  background-color: $cBlack;
+  color: yellow;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .note-name {
@@ -142,7 +165,7 @@ text-decoration: none;
   resize: none;
 }
 
-.note-text-parent{
+.note-text-parent {
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -166,14 +189,19 @@ text-decoration: none;
   resize: none;
 }
 
-.show-name{
-  display: flex;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bolder;
+.show {
+  width: 100vw;
 }
 
-.show-text{
+.show-name {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.show-text {
   display: flex;
   justify-content: center;
 }

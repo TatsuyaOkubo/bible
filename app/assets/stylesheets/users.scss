@@ -35,9 +35,10 @@
 }
 .account-page .account-page__header .btn {
   margin-top: 20px;
-  color: #fff;
-  background-color: #ccc;
+  color: white;
+  background-color: gray;
   font-size: 14px;
+  text-decoration: none;
 }
 .account-page .field {
   margin-bottom: 10px;
@@ -69,6 +70,7 @@
 .account-page input[type=submit] {
   float: left;
   margin-top: 20px;
+  font-size: 20px;
   color: #fff;
   background-color: #38aef0;
 }
