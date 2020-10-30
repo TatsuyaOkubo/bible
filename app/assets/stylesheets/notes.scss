@@ -3,104 +3,108 @@ $cBlack: #333333;
 
 .header {
   background-color: $cBlack;
-  width: 100%;
-  height: 50px;
+  width: 100vw;
+  height: 60px;
+  font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .home a {
+    color: $cwhite;
+    text-decoration: none;
+  }
+
+  .open-box a {
+    color: $cwhite;
+    text-decoration: none;
+  }
+
+  .search-form {
+    display: flex;
+    width: 50%;
+    height: 50%;
+
+    .search-input {
+      width: 100%;
+      height: 100%;
+      color: black;
+      text-decoration: none;
+    }
+
+    .search-btn {
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+
+  .create-note a {
+    color: $cwhite;
+    text-decoration: none;
+  }
+
+  .edit-note a {
+    color: yellow;
+    text-decoration: none;
+  }
+
+  .account a {
+    color: $cwhite;
+    text-decoration: none;
+  }
 }
 
-.search-form {
-  display: flex;
-  width: 50%;
-  height: 50%;
-}
-
-.search-input {
-  width: 100%;
-  height: 100%;
-  font-size: 16px;
-  color: black;
-  text-decoration: none;
-}
-
-.search-btn {
-  background-color: white;
-  cursor: pointer;
-}
-
-.home a {
-  font-size: 16px;
-  color: $cwhite;
-  text-decoration: none;
-}
-
-.open-box a {
-  font-size: 16px;
-  color: $cwhite;
-  text-decoration: none;
-}
-
-.create-note a {
-  font-size: 16px;
-  color: $cwhite;
-  text-decoration: none;
-}
-
-.edit-note a {
-  font-size: 16px;
-  color: yellow;
-  text-decoration: none;
-}
-
-.account a {
-  font-size: 16px;
-  color: $cwhite;
-  text-decoration: none;
-}
 
 .catalog {
   display: flex;
   justify-content: center;
-}
 
-.catalog-name {
-  height: 40px;
-  width: 80%;
-  padding: 4px;
-  margin-top: 20px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 24px;
-  resize: none;
-  text-decoration: none;
-  color: black;
-  text-align: center;
-  box-shadow: none;
+  .catalog-name {
+    height: 40px;
+    width: 80%;
+    padding: 4px;
+    margin-top: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 24px;
+    resize: none;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    box-shadow: none;
+  
+      &:hover {
+        transform: translate(-2.5px, -2.5px);
+        box-shadow: 5px 5px 0 0 gray;
+        transition: 0.3s;
+      }
+  }
 
+  .trash-btn-icon {
+    margin-top: 20px;
+    cursor: pointer;
     &:hover {
-      transform: translate(-2.5px, -2.5px);
-      box-shadow: 5px 5px 0 0 gray;
+      transform: translate(0px, -2.5px);
       transition: 0.3s;
     }
-}
+  }
 
-.revival {
-  margin: 20px;
-  padding-top: 10px;
-}
-
-.delete-btn {
-  margin-top: 20px;
-  padding-top: 10px;
-}
-
-.trash-btn-icon {
-  margin-top: 20px;
-  cursor: pointer;
-  &:hover {
-    transform: translate(0px, -2.5px);
-    transition: 0.3s;
+  .revival {
+    margin: 20px;
+    padding-top: 10px;
+    &:hover {
+      transform: translate(0px, -2.5px);
+      transition: 0.3s;
+    }
+  }
+  
+  .delete-btn {
+    margin-top: 20px;
+    padding-top: 10px;
+    &:hover {
+      transform: translate(0px, -2.5px);
+      transition: 0.3s;
+    }
   }
 }
 
@@ -110,98 +114,91 @@ $cBlack: #333333;
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  min-width: 500px;
-}
-
-.note-main {
-  background-color: #fff;
-  height: 100vh;
-  width: 80vw;
-  min-width: 450px;
-  padding: 2vh 1vw;
-  display: flex;
-  justify-content: center;
-}
-
-.form {
   width: 100vw;
+
+  .note-main {
+    background-color: #ffff;
+    height: 100vh;
+    width: 80vw;
+    padding: 2vh 1vw;
+    display: flex;
+    justify-content: center;
+
+    .show {
+      width: 100vw;
+    
+      .show-name {
+        display: flex;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: bolder;
+        padding: 10px;
+      }
+    
+      .show-text {
+        display: flex;
+      }
+    }
+  }
 }
 
 .note {
   height: 100vh;
+
+  .note-name-parent {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    height: 10px;
+    width: 64vw;
+
+    .note-name-child {
+      height: 10px;
+      width: 300px;
+
+      .note-name {
+        height: 40px;
+        width: 100%;
+        padding: 4px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 24px;
+        resize: none;
+      }
+    }
+
+    .save-btn-contents {
+      width: 5%;
+
+      .save-btn {
+        background-color: $cBlack;
+        color: yellow;
+        font-size: 22px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .note-text-parent {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 78vw;
+    margin-top: 60px;
+
+    .note-text-child {
+      height: 100vh;
+      width: 100%;
+    }
+  }
 }
 
-.note-name-parent {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
-  height: 10px;
-}
+@media (max-width: 599px) {
+  .header {
+    font-size: 12px;
+  }
+  .note-name-parent {
+    width: 100px;
+  }
 
-.note-name-child {
-  height: 10px;
-  width: 50%;
-  display: flex;
-}
-
-.save-btn-contents {
-  width: 5%;
-}
-
-.save-btn {
-  background-color: $cBlack;
-  color: yellow;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.note-name {
-  height: 40px;
-  width: 100%;
-  padding: 4px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 24px;
-  resize: none;
-}
-
-.note-text-parent {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  margin-top: 60px;
-}
-
-.note-text-child {
-  height: 100vh;
-  width: 100%;
-}
-
-.note-text {
-  height: 100vh;
-  width: 100%;
-  margin: 1vh 0 0 0;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  resize: none;
-}
-
-.show {
-  width: 100vw;
-}
-
-.show-name {
-  display: flex;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: bolder;
-  padding: 10px;
-}
-
-.show-text {
-  display: flex;
-  justify-content: center;
 }
