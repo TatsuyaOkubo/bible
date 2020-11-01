@@ -12,7 +12,7 @@ Bibleはノート管理アプリです。
 <br>
 
 # 🌐 アプリURL
-### **bible-28796.work:3000**
+### **http://bible-28796.work:3000**
 
 <br>
 
